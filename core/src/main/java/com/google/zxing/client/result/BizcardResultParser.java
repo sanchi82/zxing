@@ -34,7 +34,7 @@ public final class BizcardResultParser extends AbstractDoCoMoResultParser {
   // like the DoCoMo MECARD format, but this is not technically one of 
   // DoCoMo's proposed formats
 
-  @Override
+  
   public AddressBookParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     if (!rawText.startsWith("BIZCARD:")) {
@@ -72,7 +72,7 @@ public final class BizcardResultParser extends AbstractDoCoMoResultParser {
   private static String[] buildPhoneNumbers(String number1,
                                             String number2,
                                             String number3) {
-    List<String> numbers = new ArrayList<>(3);
+    List<String> numbers = new ArrayList<String>(3);
     if (number1 != null) {
       numbers.add(number1);
     }

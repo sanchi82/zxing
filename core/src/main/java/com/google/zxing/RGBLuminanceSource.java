@@ -78,7 +78,7 @@ public final class RGBLuminanceSource extends LuminanceSource {
     this.top = top;
   }
 
-  @Override
+  
   public byte[] getRow(int y, byte[] row) {
     if (y < 0 || y >= getHeight()) {
       throw new IllegalArgumentException("Requested row is outside the image: " + y);
@@ -92,7 +92,7 @@ public final class RGBLuminanceSource extends LuminanceSource {
     return row;
   }
 
-  @Override
+  
   public byte[] getMatrix() {
     int width = getWidth();
     int height = getHeight();
@@ -123,12 +123,12 @@ public final class RGBLuminanceSource extends LuminanceSource {
     return matrix;
   }
   
-  @Override
+  
   public boolean isCropSupported() {
     return true;
   }
 
-  @Override
+  
   public LuminanceSource crop(int left, int top, int width, int height) {
     return new RGBLuminanceSource(luminances,
                                   dataWidth,

@@ -49,7 +49,7 @@ public final class Code128Writer extends OneDimensionalCodeWriter {
   private static final int CODE_FNC_3 = 96;    // Code A, Code B
   private static final int CODE_FNC_4_B = 100; // Code B
 
-  @Override
+  
   public BitMatrix encode(String contents,
                           BarcodeFormat format,
                           int width,
@@ -61,7 +61,7 @@ public final class Code128Writer extends OneDimensionalCodeWriter {
     return super.encode(contents, format, width, height, hints);
   }
 
-  @Override
+  
   public boolean[] encode(String contents) {
     int length = contents.length();
     // Check length
@@ -85,7 +85,7 @@ public final class Code128Writer extends OneDimensionalCodeWriter {
       }
     }
     
-    Collection<int[]> patterns = new ArrayList<>(); // temporary storage for patterns
+    Collection<int[]> patterns = new ArrayList<int[]>(); // temporary storage for patterns
     int checkSum = 0;
     int checkWeight = 1;
     int codeSet = 0; // selected code (CODE_CODE_B or CODE_CODE_C)

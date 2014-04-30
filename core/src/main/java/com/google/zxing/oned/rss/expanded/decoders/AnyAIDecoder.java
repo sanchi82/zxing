@@ -42,7 +42,7 @@ final class AnyAIDecoder extends AbstractExpandedDecoder {
     super(information);
   }
 
-  @Override
+  
   public String parseInformation() throws NotFoundException, FormatException {
     StringBuilder buf = new StringBuilder();
     return this.getGeneralDecoder().decodeAllCodes(buf, HEADER_SIZE);

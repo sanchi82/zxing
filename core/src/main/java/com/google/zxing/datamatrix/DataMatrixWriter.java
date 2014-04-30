@@ -38,15 +38,15 @@ import java.util.Map;
  */
 public final class DataMatrixWriter implements Writer {
 
-  @Override
+  
   public BitMatrix encode(String contents, BarcodeFormat format, int width, int height) {
     return encode(contents, format, width, height, null);
   }
 
-  @Override
+  
   public BitMatrix encode(String contents, BarcodeFormat format, int width, int height, Map<EncodeHintType,?> hints) {
 
-    if (contents.isEmpty()) {
+    if (contents.length()==0) {
       throw new IllegalArgumentException("Found empty contents");
     }
     

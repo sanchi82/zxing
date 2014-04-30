@@ -58,7 +58,7 @@ public final class QRCode {
     return matrix;
   }
 
-  @Override
+  
   public String toString() {
     StringBuilder result = new StringBuilder(200);
     result.append("<<\n");

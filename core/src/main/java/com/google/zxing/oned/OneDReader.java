@@ -41,13 +41,13 @@ import java.util.Map;
  */
 public abstract class OneDReader implements Reader {
 
-  @Override
+  
   public Result decode(BinaryBitmap image) throws NotFoundException, FormatException {
     return decode(image, null);
   }
 
   // Note that we don't try rotation without the try harder flag, even if rotation was supported.
-  @Override
+  
   public Result decode(BinaryBitmap image,
                        Map<DecodeHintType,?> hints) throws NotFoundException, FormatException {
     try {
@@ -81,7 +81,7 @@ public abstract class OneDReader implements Reader {
     }
   }
 
-  @Override
+  
   public void reset() {
     // do nothing
   }
@@ -144,7 +144,7 @@ public abstract class OneDReader implements Reader {
           // don't want to clutter with noise from every single row scan -- just the scans
           // that start on the center line.
           if (hints != null && hints.containsKey(DecodeHintType.NEED_RESULT_POINT_CALLBACK)) {
-            Map<DecodeHintType,Object> newHints = new EnumMap<>(DecodeHintType.class);
+            Map<DecodeHintType,Object> newHints = new EnumMap<DecodeHintType,Object>(DecodeHintType.class);
             newHints.putAll(hints);
             newHints.remove(DecodeHintType.NEED_RESULT_POINT_CALLBACK);
             hints = newHints;

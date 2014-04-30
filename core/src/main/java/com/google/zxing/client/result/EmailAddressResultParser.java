@@ -30,8 +30,6 @@ import java.util.regex.Pattern;
 public final class EmailAddressResultParser extends ResultParser {
 
   private static final Pattern COMMA = Pattern.compile(",");
-
-  @Override
   public EmailAddressParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     if (rawText.startsWith("mailto:") || rawText.startsWith("MAILTO:")) {

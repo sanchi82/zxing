@@ -28,7 +28,7 @@ import com.google.zxing.oned.UPCEReader;
 public final class ProductResultParser extends ResultParser {
 
   // Treat all UPC and EAN variants as UPCs, in the sense that they are all product barcodes.
-  @Override
+  
   public ProductParsedResult parse(Result result) {
     BarcodeFormat format = result.getBarcodeFormat();
     if (!(format == BarcodeFormat.UPC_A || format == BarcodeFormat.UPC_E ||

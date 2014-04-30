@@ -81,7 +81,7 @@ public final class ITFReader extends OneDReader {
       {N, W, N, W, N}  // 9
   };
 
-  @Override
+  
   public Result decodeRow(int rowNumber, BitArray row, Map<DecodeHintType,?> hints)
       throws FormatException, NotFoundException {
 

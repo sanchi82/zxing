@@ -592,7 +592,7 @@ public final class Detector {
       return y;
     }
 
-    @Override
+    
     public String toString() {
       return "<" + x + ' ' + y + '>';
     }

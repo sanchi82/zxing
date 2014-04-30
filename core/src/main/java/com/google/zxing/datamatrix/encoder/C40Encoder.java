@@ -18,12 +18,12 @@ package com.google.zxing.datamatrix.encoder;
 
 class C40Encoder implements Encoder {
 
-  @Override
+  
   public int getEncodingMode() {
     return HighLevelEncoder.C40_ENCODATION;
   }
 
-  @Override
+  
   public void encode(EncoderContext context) {
     //step C
     StringBuilder buffer = new StringBuilder();

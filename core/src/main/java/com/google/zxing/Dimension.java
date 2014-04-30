@@ -40,7 +40,7 @@ public final class Dimension {
     return height;
   }
 
-  @Override 
+   
   public boolean equals(Object other) {
     if (other instanceof Dimension) {
       Dimension d = (Dimension) other;
@@ -49,12 +49,12 @@ public final class Dimension {
     return false;
   }
 
-  @Override 
+   
   public int hashCode() {
       return width * 32713 + height;
   }
 
-  @Override
+  
   public String toString() {
     return width + "x" + height;
   }

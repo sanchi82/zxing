@@ -54,7 +54,7 @@ public final class WifiParsedResult extends ParsedResult {
     return hidden;
   }
 
-  @Override
+  
   public String getDisplayResult() {
     StringBuilder result = new StringBuilder(80);
     maybeAppend(ssid, result);

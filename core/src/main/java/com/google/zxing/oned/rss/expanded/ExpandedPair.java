@@ -69,14 +69,14 @@ final class ExpandedPair {
     return this.rightChar == null;
   }
   
-  @Override
+  
   public String toString() {
     return
         "[ " + leftChar + " , " + rightChar + " : " +
         (finderPattern == null ? "null" : finderPattern.getValue()) + " ]";
   }
   
-  @Override
+  
   public boolean equals(Object o) {
     if (!(o instanceof ExpandedPair)) {
       return false;
@@ -92,7 +92,7 @@ final class ExpandedPair {
     return o1 == null ? o2 == null : o1.equals(o2);
   }
 
-  @Override
+  
   public int hashCode() {
     return hashNotNull(leftChar) ^ hashNotNull(rightChar) ^ hashNotNull(finderPattern);
   }

@@ -68,7 +68,7 @@ public final class EAN13Reader extends UPCEANReader {
     decodeMiddleCounters = new int[4];
   }
 
-  @Override
+  
   protected int decodeMiddle(BitArray row,
                              int[] startRange,
                              StringBuilder resultString) throws NotFoundException {
@@ -109,7 +109,7 @@ public final class EAN13Reader extends UPCEANReader {
     return rowOffset;
   }
 
-  @Override
+  
   BarcodeFormat getBarcodeFormat() {
     return BarcodeFormat.EAN_13;
   }

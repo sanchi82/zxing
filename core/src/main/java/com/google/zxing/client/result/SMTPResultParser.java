@@ -26,7 +26,7 @@ import com.google.zxing.Result;
  */
 public final class SMTPResultParser extends ResultParser {
 
-  @Override
+  
   public EmailAddressParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     if (!(rawText.startsWith("smtp:") || rawText.startsWith("SMTP:"))) {

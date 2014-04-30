@@ -54,7 +54,7 @@ public final class URIParsedResult extends ParsedResult {
     return USER_IN_HOST.matcher(uri).find();
   }
 
-  @Override
+  
   public String getDisplayResult() {
     StringBuilder result = new StringBuilder(30);
     maybeAppend(title, result);

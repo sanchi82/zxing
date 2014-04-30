@@ -49,7 +49,7 @@ public final class MultiFormatReader implements Reader {
    * @return The contents of the image
    * @throws NotFoundException Any errors which occurred
    */
-  @Override
+  
   public Result decode(BinaryBitmap image) throws NotFoundException {
     setHints(null);
     return decodeInternal(image);
@@ -63,7 +63,7 @@ public final class MultiFormatReader implements Reader {
    * @return The contents of the image
    * @throws NotFoundException Any errors which occurred
    */
-  @Override
+  
   public Result decode(BinaryBitmap image, Map<DecodeHintType,?> hints) throws NotFoundException {
     setHints(hints);
     return decodeInternal(image);
@@ -99,7 +99,7 @@ public final class MultiFormatReader implements Reader {
     @SuppressWarnings("unchecked")
     Collection<BarcodeFormat> formats =
         hints == null ? null : (Collection<BarcodeFormat>) hints.get(DecodeHintType.POSSIBLE_FORMATS);
-    Collection<Reader> readers = new ArrayList<>();
+    Collection<Reader> readers = new ArrayList<Reader>();
     if (formats != null) {
       boolean addOneDReader =
           formats.contains(BarcodeFormat.UPC_A) ||
@@ -155,7 +155,7 @@ public final class MultiFormatReader implements Reader {
     this.readers = readers.toArray(new Reader[readers.size()]);
   }
 
-  @Override
+  
   public void reset() {
     if (readers != null) {
       for (Reader reader : readers) {

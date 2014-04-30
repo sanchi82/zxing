@@ -31,7 +31,7 @@ import java.util.List;
  */
 public final class AddressBookAUResultParser extends ResultParser {
 
-  @Override
+  
   public AddressBookParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     // MEMORY is mandatory; seems like a decent indicator, as does end-of-record separator CR/LF
@@ -78,7 +78,7 @@ public final class AddressBookAUResultParser extends ResultParser {
         break;
       }
       if (values == null) {
-        values = new ArrayList<>(max); // lazy init
+        values = new ArrayList<String>(max); // lazy init
       }
       values.add(value);
     }

@@ -42,7 +42,7 @@ final class AI01AndOtherAIs extends AI01decoder {
     super(information);
   }
 
-  @Override
+  
   public String parseInformation() throws NotFoundException, FormatException {
     StringBuilder buff = new StringBuilder();
 

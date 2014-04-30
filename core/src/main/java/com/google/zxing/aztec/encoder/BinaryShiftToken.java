@@ -31,7 +31,7 @@ final class BinaryShiftToken extends Token {
     this.binaryShiftByteCount = (short) binaryShiftByteCount;
   }
 
-  @Override
+  
   public void appendTo(BitArray bitArray, byte[] text) {
     for (int i = 0; i < binaryShiftByteCount; i++) {
       if (i == 0 || (i == 31 && binaryShiftByteCount <= 62))  {
@@ -52,7 +52,7 @@ final class BinaryShiftToken extends Token {
     }
   }
 
-  @Override
+  
   public String toString() {
     return "<" + binaryShiftStart + "::" + (binaryShiftStart + binaryShiftByteCount - 1) + '>';
   }

@@ -388,7 +388,6 @@ public final class BitMatrix implements Cloneable {
     return rowSize;
   }
 
-  @Override
   public boolean equals(Object o) {
     if (!(o instanceof BitMatrix)) {
       return false;
@@ -398,7 +397,7 @@ public final class BitMatrix implements Cloneable {
     Arrays.equals(bits, other.bits);
   }
 
-  @Override
+  
   public int hashCode() {
     int hash = width;
     hash = 31 * hash + width;
@@ -408,7 +407,7 @@ public final class BitMatrix implements Cloneable {
     return hash;
   }
 
-  @Override
+  
   public String toString() {
     return toString("X ", "  ");
   }
@@ -432,7 +431,7 @@ public final class BitMatrix implements Cloneable {
     return result.toString();
   }
 
-  @Override
+  
   public BitMatrix clone() {
     return new BitMatrix(width, height, rowSize, bits.clone());
   }

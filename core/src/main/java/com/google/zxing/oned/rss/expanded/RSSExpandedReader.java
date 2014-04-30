@@ -114,13 +114,13 @@ public final class RSSExpandedReader extends AbstractRSSReader {
 
   private static final int MAX_PAIRS = 11;
 
-  private final List<ExpandedPair> pairs = new ArrayList<>(MAX_PAIRS);
-  private final List<ExpandedRow> rows = new ArrayList<>();
+  private final List<ExpandedPair> pairs = new ArrayList<ExpandedPair>(MAX_PAIRS);
+  private final List<ExpandedRow> rows = new ArrayList<ExpandedRow>();
   private final int [] startEnd = new int[2];
   //private final int [] currentSequence = new int[LONGEST_SEQUENCE_SIZE];
   private boolean startFromEven = false;
 
-  @Override
+  
   public Result decodeRow(int rowNumber,
                           BitArray row,
                           Map<DecodeHintType,?> hints) throws NotFoundException, FormatException {
@@ -141,7 +141,7 @@ public final class RSSExpandedReader extends AbstractRSSReader {
     return constructResult(pairs);
   }
 
-  @Override
+  
   public void reset() {
     this.pairs.clear();
     this.rows.clear();
@@ -234,7 +234,7 @@ public final class RSSExpandedReader extends AbstractRSSReader {
         return this.pairs;
       }
 
-      List<ExpandedRow> rs = new ArrayList<>();
+      List<ExpandedRow> rs = new ArrayList<ExpandedRow>();
       rs.addAll(collectedRows);
       rs.add(row);
       try {

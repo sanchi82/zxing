@@ -44,13 +44,13 @@ public final class ByQuadrantReader implements Reader {
     this.delegate = delegate;
   }
 
-  @Override
+  
   public Result decode(BinaryBitmap image)
       throws NotFoundException, ChecksumException, FormatException {
     return decode(image, null);
   }
 
-  @Override
+  
   public Result decode(BinaryBitmap image, Map<DecodeHintType,?> hints)
       throws NotFoundException, ChecksumException, FormatException {
 
@@ -98,7 +98,7 @@ public final class ByQuadrantReader implements Reader {
     return result;
   }
 
-  @Override
+  
   public void reset() {
     delegate.reset();
   }

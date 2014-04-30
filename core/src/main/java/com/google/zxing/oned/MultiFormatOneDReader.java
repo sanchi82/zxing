@@ -44,7 +44,7 @@ public final class MultiFormatOneDReader extends OneDReader {
         (Collection<BarcodeFormat>) hints.get(DecodeHintType.POSSIBLE_FORMATS);
     boolean useCode39CheckDigit = hints != null &&
         hints.get(DecodeHintType.ASSUME_CODE_39_CHECK_DIGIT) != null;
-    Collection<OneDReader> readers = new ArrayList<>();
+    Collection<OneDReader> readers = new ArrayList<OneDReader>();
     if (possibleFormats != null) {
       if (possibleFormats.contains(BarcodeFormat.EAN_13) ||
           possibleFormats.contains(BarcodeFormat.UPC_A) ||
@@ -87,7 +87,7 @@ public final class MultiFormatOneDReader extends OneDReader {
     this.readers = readers.toArray(new OneDReader[readers.size()]);
   }
 
-  @Override
+  
   public Result decodeRow(int rowNumber,
                           BitArray row,
                           Map<DecodeHintType,?> hints) throws NotFoundException {
@@ -102,7 +102,7 @@ public final class MultiFormatOneDReader extends OneDReader {
     throw NotFoundException.getNotFoundInstance();
   }
 
-  @Override
+  
   public void reset() {
     for (Reader reader : readers) {
       reader.reset();

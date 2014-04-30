@@ -18,12 +18,12 @@ package com.google.zxing.datamatrix.encoder;
 
 final class TextEncoder extends C40Encoder {
 
-  @Override
+  
   public int getEncodingMode() {
     return HighLevelEncoder.TEXT_ENCODATION;
   }
 
-  @Override
+  
   int encodeChar(char c, StringBuilder sb) {
     if (c == ' ') {
       sb.append('\3');

@@ -94,7 +94,7 @@ public final class Result {
 
   public void putMetadata(ResultMetadataType type, Object value) {
     if (resultMetadata == null) {
-      resultMetadata = new EnumMap<>(ResultMetadataType.class);
+      resultMetadata = new EnumMap<ResultMetadataType,Object>(ResultMetadataType.class);
     }
     resultMetadata.put(type, value);
   }
@@ -125,7 +125,7 @@ public final class Result {
     return timestamp;
   }
 
-  @Override
+  
   public String toString() {
     return text;
   }

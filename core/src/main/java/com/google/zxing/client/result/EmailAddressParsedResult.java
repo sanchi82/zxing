@@ -82,7 +82,7 @@ public final class EmailAddressParsedResult extends ParsedResult {
     return "mailto:";
   }
 
-  @Override
+  
   public String getDisplayResult() {
     StringBuilder result = new StringBuilder(30);
     maybeAppend(tos, result);

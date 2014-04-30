@@ -226,7 +226,7 @@ public class SymbolInfo {
     return rsBlockError;
   }
 
-  @Override
+  
   public final String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append(rectangular ? "Rectangular Symbol:" : "Square Symbol:");

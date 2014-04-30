@@ -129,7 +129,7 @@ public abstract class LuminanceSource {
     throw new UnsupportedOperationException("This luminance source does not support rotation by 45 degrees.");
   }
 
-  @Override
+  
   public final String toString() {
     byte[] row = new byte[width];
     StringBuilder result = new StringBuilder(height * (width + 1));
