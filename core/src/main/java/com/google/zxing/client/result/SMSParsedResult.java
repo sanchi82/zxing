@@ -99,7 +99,7 @@ public final class SMSParsedResult extends ParsedResult {
     return body;
   }
 
-  @Override
+  
   public String getDisplayResult() {
     StringBuilder result = new StringBuilder(100);
     maybeAppend(numbers, result);

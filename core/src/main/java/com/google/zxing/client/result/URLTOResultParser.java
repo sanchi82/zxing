@@ -27,7 +27,7 @@ import com.google.zxing.Result;
  */
 public final class URLTOResultParser extends ResultParser {
 
-  @Override
+  
   public URIParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     if (!rawText.startsWith("urlto:") && !rawText.startsWith("URLTO:")) {

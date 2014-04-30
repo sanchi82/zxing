@@ -73,7 +73,7 @@ public final class ByteMatrix {
     }
   }
 
-  @Override
+  
   public String toString() {
     StringBuilder result = new StringBuilder(2 * width * height + 2);
     for (int y = 0; y < height; ++y) {

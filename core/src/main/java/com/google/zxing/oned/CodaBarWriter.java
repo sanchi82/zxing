@@ -29,7 +29,7 @@ public final class CodaBarWriter extends OneDimensionalCodeWriter {
   private static final char[] ALT_START_END_CHARS = {'T', 'N', '*', 'E'};
   private static final char[] CHARS_WHICH_ARE_TEN_LENGTH_EACH_AFTER_DECODED = {'/', ':', '+', '.'};
 
-  @Override
+  
   public boolean[] encode(String contents) {
 
     if (contents.length() < 2) {

@@ -57,12 +57,12 @@ public final class MaxiCodeReader implements Reader {
    * @throws FormatException if a MaxiCode cannot be decoded
    * @throws ChecksumException if error correction fails
    */
-  @Override
+  
   public Result decode(BinaryBitmap image) throws NotFoundException, ChecksumException, FormatException {
     return decode(image, null);
   }
 
-  @Override
+  
   public Result decode(BinaryBitmap image, Map<DecodeHintType,?> hints)
       throws NotFoundException, ChecksumException, FormatException {
     DecoderResult decoderResult;
@@ -83,7 +83,7 @@ public final class MaxiCodeReader implements Reader {
     return result;
   }
 
-  @Override
+  
   public void reset() {
     // do nothing
   }

@@ -30,7 +30,7 @@ final class ExpandedRow {
   private final boolean wasReversed;
 
   ExpandedRow(List<ExpandedPair> pairs, int rowNumber, boolean wasReversed) {
-    this.pairs = new ArrayList<>(pairs);
+    this.pairs = new ArrayList<ExpandedPair>(pairs);
     this.rowNumber = rowNumber;
     this.wasReversed = wasReversed;
   }
@@ -51,7 +51,7 @@ final class ExpandedRow {
     return this.pairs.equals(otherPairs);
   }
   
-  @Override
+  
   public String toString() {
     return "{ " + pairs + " }";
   }
@@ -59,7 +59,7 @@ final class ExpandedRow {
   /** 
    * Two rows are equal if they contain the same pairs in the same order. 
    */
-  @Override
+  
   public boolean equals(Object o) {
     if (!(o instanceof ExpandedRow)) {
       return false;
@@ -68,7 +68,7 @@ final class ExpandedRow {
     return this.pairs.equals(that.getPairs()) && wasReversed == that.wasReversed;
   }
 
-  @Override
+  
   public int hashCode() {
     return pairs.hashCode() ^ Boolean.valueOf(wasReversed).hashCode();
   }

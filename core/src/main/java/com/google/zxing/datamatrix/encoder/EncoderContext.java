@@ -34,7 +34,11 @@ final class EncoderContext {
 
   EncoderContext(String msg) {
     //From this point on Strings are not Unicode anymore!
-    byte[] msgBinary = msg.getBytes(Charset.forName("ISO-8859-1"));
+    byte[] msgBinary = {};
+    try {
+      msgBinary = msg.getBytes(Charset.forName("ISO-8859-1").name());
+    } catch (java.io.UnsupportedEncodingException uee) {
+    }
     StringBuilder sb = new StringBuilder(msgBinary.length);
     for (int i = 0, c = msgBinary.length; i < c; i++) {
       char ch = (char) (msgBinary[i] & 0xff);

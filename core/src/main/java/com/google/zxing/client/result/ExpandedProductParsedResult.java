@@ -87,7 +87,7 @@ public final class ExpandedProductParsedResult extends ParsedResult {
     this.uncommonAIs = uncommonAIs;
   }
 
-  @Override
+  
   public boolean equals(Object o){
     if (!(o instanceof ExpandedProductParsedResult)) {
       return false;
@@ -114,7 +114,7 @@ public final class ExpandedProductParsedResult extends ParsedResult {
     return o1 == null ? o2 == null : o1.equals(o2);
   }
 
-  @Override
+  
   public int hashCode(){
     int hash = 0;
     hash ^= hashNotNull(productID);
@@ -197,7 +197,7 @@ public final class ExpandedProductParsedResult extends ParsedResult {
     return uncommonAIs;
   }
 
-  @Override
+  
   public String getDisplayResult() {
     return String.valueOf(rawText);
   }

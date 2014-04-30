@@ -251,7 +251,11 @@ final class PDF417HighLevelEncoder {
         throw new WriterException("No support for any encoding: " + DEFAULT_ENCODING_NAMES);
       }
     }
-    return msg.getBytes(encoding);
+    try {
+      return msg.getBytes(encoding.name());
+    } catch (java.io.UnsupportedEncodingException uee) {
+      return new byte[]{};
+    }
   }
 
   /**

@@ -44,7 +44,7 @@ public final class TelParsedResult extends ParsedResult {
     return title;
   }
 
-  @Override
+  
   public String getDisplayResult() {
     StringBuilder result = new StringBuilder(20);
     maybeAppend(number, result);

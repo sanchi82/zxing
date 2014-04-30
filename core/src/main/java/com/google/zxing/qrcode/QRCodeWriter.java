@@ -37,21 +37,21 @@ public final class QRCodeWriter implements Writer {
 
   private static final int QUIET_ZONE_SIZE = 4;
 
-  @Override
+  
   public BitMatrix encode(String contents, BarcodeFormat format, int width, int height)
       throws WriterException {
 
     return encode(contents, format, width, height, null);
   }
 
-  @Override
+  
   public BitMatrix encode(String contents,
                           BarcodeFormat format,
                           int width,
                           int height,
                           Map<EncodeHintType,?> hints) throws WriterException {
 
-    if (contents.isEmpty()) {
+    if (contents.length()==0) {
       throw new IllegalArgumentException("Found empty contents");
     }
 

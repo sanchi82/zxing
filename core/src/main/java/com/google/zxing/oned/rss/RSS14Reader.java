@@ -57,11 +57,11 @@ public final class RSS14Reader extends AbstractRSSReader {
   private final List<Pair> possibleRightPairs;
 
   public RSS14Reader() {
-    possibleLeftPairs = new ArrayList<>();
-    possibleRightPairs = new ArrayList<>();
+    possibleLeftPairs = new ArrayList<Pair>();
+    possibleRightPairs = new ArrayList<Pair>();
   }
 
-  @Override
+  
   public Result decodeRow(int rowNumber,
                           BitArray row,
                           Map<DecodeHintType,?> hints) throws NotFoundException {
@@ -106,7 +106,7 @@ public final class RSS14Reader extends AbstractRSSReader {
     }
   }
 
-  @Override
+  
   public void reset() {
     possibleLeftPairs.clear();
     possibleRightPairs.clear();

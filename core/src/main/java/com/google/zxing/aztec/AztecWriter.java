@@ -30,12 +30,12 @@ public final class AztecWriter implements Writer {
   
   private static final Charset DEFAULT_CHARSET = Charset.forName("ISO-8859-1");
 
-  @Override
+  
   public BitMatrix encode(String contents, BarcodeFormat format, int width, int height) {
     return encode(contents, format, width, height, null);
   }
 
-  @Override
+  
   public BitMatrix encode(String contents, BarcodeFormat format, int width, int height, Map<EncodeHintType,?> hints) {
     String charset = hints == null ? null : (String) hints.get(EncodeHintType.CHARACTER_SET);
     Number eccPercent = hints == null ? null : (Number) hints.get(EncodeHintType.ERROR_CORRECTION);
@@ -55,7 +55,10 @@ public final class AztecWriter implements Writer {
     if (format != BarcodeFormat.AZTEC) {
       throw new IllegalArgumentException("Can only encode AZTEC, but got " + format);
     }
-    AztecCode aztec = Encoder.encode(contents.getBytes(charset), eccPercent, layers);
+    AztecCode aztec = null;
+    try {
+      aztec = Encoder.encode(contents.getBytes(charset.name()), eccPercent, layers);
+    } catch (java.io.UnsupportedEncodingException uee) {}
     return renderResult(aztec, width, height);
   }
 

@@ -43,7 +43,7 @@ public final class MultiFormatUPCEANReader extends OneDReader {
     @SuppressWarnings("unchecked")
     Collection<BarcodeFormat> possibleFormats = hints == null ? null :
         (Collection<BarcodeFormat>) hints.get(DecodeHintType.POSSIBLE_FORMATS);
-    Collection<UPCEANReader> readers = new ArrayList<>();
+    Collection<UPCEANReader> readers = new ArrayList<UPCEANReader>();
     if (possibleFormats != null) {
       if (possibleFormats.contains(BarcodeFormat.EAN_13)) {
         readers.add(new EAN13Reader());
@@ -66,7 +66,7 @@ public final class MultiFormatUPCEANReader extends OneDReader {
     this.readers = readers.toArray(new UPCEANReader[readers.size()]);
   }
 
-  @Override
+  
   public Result decodeRow(int rowNumber,
                           BitArray row,
                           Map<DecodeHintType,?> hints) throws NotFoundException {
@@ -114,7 +114,7 @@ public final class MultiFormatUPCEANReader extends OneDReader {
     throw NotFoundException.getNotFoundInstance();
   }
 
-  @Override
+  
   public void reset() {
     for (Reader reader : readers) {
       reader.reset();

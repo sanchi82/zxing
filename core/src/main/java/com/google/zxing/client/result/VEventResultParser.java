@@ -28,7 +28,7 @@ import java.util.List;
  */
 public final class VEventResultParser extends ResultParser {
 
-  @Override
+  
   public CalendarParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     int vEventStart = rawText.indexOf("BEGIN:VEVENT");

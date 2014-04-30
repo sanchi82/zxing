@@ -30,7 +30,7 @@ import com.google.zxing.Result;
  */
 public final class SMSTOMMSTOResultParser extends ResultParser {
 
-  @Override
+  
   public SMSParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     if (!(rawText.startsWith("smsto:") || rawText.startsWith("SMSTO:") ||

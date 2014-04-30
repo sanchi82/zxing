@@ -18,12 +18,12 @@ package com.google.zxing.datamatrix.encoder;
 
 final class Base256Encoder implements Encoder {
 
-  @Override
+  
   public int getEncodingMode() {
     return HighLevelEncoder.BASE256_ENCODATION;
   }
 
-  @Override
+  
   public void encode(EncoderContext context) {
     StringBuilder buffer = new StringBuilder();
     buffer.append('\0'); //Initialize length field

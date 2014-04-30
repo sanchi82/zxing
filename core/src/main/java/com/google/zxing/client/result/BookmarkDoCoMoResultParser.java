@@ -23,7 +23,7 @@ import com.google.zxing.Result;
  */
 public final class BookmarkDoCoMoResultParser extends AbstractDoCoMoResultParser {
 
-  @Override
+  
   public URIParsedResult parse(Result result) {
     String rawText = result.getText();
     if (!rawText.startsWith("MEBKM:")) {

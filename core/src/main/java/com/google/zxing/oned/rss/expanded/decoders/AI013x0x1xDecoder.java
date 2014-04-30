@@ -48,7 +48,7 @@ final class AI013x0x1xDecoder extends AI01weightDecoder {
     this.firstAIdigits = firstAIdigits;
   }
 
-  @Override
+  
   public String parseInformation() throws NotFoundException {
     if (this.getInformation().getSize() != HEADER_SIZE + GTIN_SIZE + WEIGHT_SIZE + DATE_SIZE) {
       throw NotFoundException.getNotFoundInstance();
@@ -93,7 +93,7 @@ final class AI013x0x1xDecoder extends AI01weightDecoder {
     buf.append(day);
   }
 
-  @Override
+  
   protected void addWeightCode(StringBuilder buf, int weight) {
     int lastAI = weight / 100000;
     buf.append('(');
@@ -102,7 +102,7 @@ final class AI013x0x1xDecoder extends AI01weightDecoder {
     buf.append(')');
   }
 
-  @Override
+  
   protected int checkWeight(int weight) {
     return weight % 100000;
   }

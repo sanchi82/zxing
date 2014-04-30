@@ -122,7 +122,7 @@ public abstract class UPCEANReader extends OneDReader {
     return startRange;
   }
 
-  @Override
+  
   public Result decodeRow(int rowNumber, BitArray row, Map<DecodeHintType,?> hints)
       throws NotFoundException, ChecksumException, FormatException {
     return decodeRow(rowNumber, row, findStartGuardPattern(row), hints);

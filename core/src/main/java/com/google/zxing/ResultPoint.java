@@ -42,7 +42,7 @@ public class ResultPoint {
     return y;
   }
 
-  @Override
+  
   public final boolean equals(Object other) {
     if (other instanceof ResultPoint) {
       ResultPoint otherPoint = (ResultPoint) other;
@@ -51,12 +51,12 @@ public class ResultPoint {
     return false;
   }
 
-  @Override
+  
   public final int hashCode() {
     return 31 * Float.floatToIntBits(x) + Float.floatToIntBits(y);
   }
 
-  @Override
+  
   public final String toString() {
     StringBuilder result = new StringBuilder(25);
     result.append('(');

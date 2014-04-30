@@ -60,7 +60,7 @@ public class FinderPatternFinder {
 
   public FinderPatternFinder(BitMatrix image, ResultPointCallback resultPointCallback) {
     this.image = image;
-    this.possibleCenters = new ArrayList<>();
+    this.possibleCenters = new ArrayList<FinderPattern>();
     this.crossCheckStateCount = new int[5];
     this.resultPointCallback = resultPointCallback;
   }
@@ -649,7 +649,7 @@ public class FinderPatternFinder {
     private FurthestFromAverageComparator(float f) {
       average = f;
     }
-    @Override
+    
     public int compare(FinderPattern center1, FinderPattern center2) {
       float dA = Math.abs(center2.getEstimatedModuleSize() - average);
       float dB = Math.abs(center1.getEstimatedModuleSize() - average);
@@ -665,7 +665,7 @@ public class FinderPatternFinder {
     private CenterComparator(float f) {
       average = f;
     }
-    @Override
+    
     public int compare(FinderPattern center1, FinderPattern center2) {
       if (center2.getCount() == center1.getCount()) {
         float dA = Math.abs(center2.getEstimatedModuleSize() - average);

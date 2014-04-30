@@ -265,7 +265,7 @@ final class DetectionResult {
     return detectionResultColumns[barcodeColumn];
   }
 
-  @Override
+  
   public String toString() {
     DetectionResultColumn rowIndicatorColumn = detectionResultColumns[0];
     if (rowIndicatorColumn == null) {

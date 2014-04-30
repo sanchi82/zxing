@@ -28,7 +28,7 @@ import java.util.Map;
  */
 public final class EmailAddressResultParser extends ResultParser {
 
-  @Override
+  
   public EmailAddressParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     String emailAddress;
@@ -44,7 +44,7 @@ public final class EmailAddressResultParser extends ResultParser {
       String subject = null;
       String body = null;
       if (nameValues != null) {
-        if (emailAddress.isEmpty()) {
+        if (emailAddress.length()==0) {
           emailAddress = nameValues.get("to");
         }
         subject = nameValues.get("subject");

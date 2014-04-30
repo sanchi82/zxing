@@ -50,12 +50,12 @@ public final class PDF417Reader implements Reader, MultipleBarcodeReader {
    * @throws NotFoundException if a PDF417 code cannot be found,
    * @throws FormatException if a PDF417 cannot be decoded
    */
-  @Override
+  
   public Result decode(BinaryBitmap image) throws NotFoundException, FormatException, ChecksumException {
     return decode(image, null);
   }
 
-  @Override
+  
   public Result decode(BinaryBitmap image, Map<DecodeHintType,?> hints) throws NotFoundException, FormatException,
       ChecksumException {
     Result[] result = decode(image, hints, false);
@@ -65,23 +65,25 @@ public final class PDF417Reader implements Reader, MultipleBarcodeReader {
     return result[0];
   }
 
-  @Override
+  
   public Result[] decodeMultiple(BinaryBitmap image) throws NotFoundException {
     return decodeMultiple(image, null);
   }
 
-  @Override
+  
   public Result[] decodeMultiple(BinaryBitmap image, Map<DecodeHintType,?> hints) throws NotFoundException {
     try {
       return decode(image, hints, true);
-    } catch (FormatException | ChecksumException ignored) {
+    } catch (FormatException ignored) {
+      throw NotFoundException.getNotFoundInstance();
+    } catch (ChecksumException ignored) {
       throw NotFoundException.getNotFoundInstance();
     }
   }
 
   private static Result[] decode(BinaryBitmap image, Map<DecodeHintType, ?> hints, boolean multiple) 
       throws NotFoundException, FormatException, ChecksumException {
-    List<Result> results = new ArrayList<>();
+    List<Result> results = new ArrayList<Result>();
     PDF417DetectorResult detectorResult = Detector.detect(image, hints, multiple);
     for (ResultPoint[] points : detectorResult.getPoints()) {
       DecoderResult decoderResult = PDF417ScanningDecoder.decode(detectorResult.getBits(), points[4], points[5],
@@ -127,7 +129,7 @@ public final class PDF417Reader implements Reader, MultipleBarcodeReader {
             PDF417Common.MODULES_IN_STOP_PATTERN));
   }
 
-  @Override
+  
   public void reset() {
     // nothing needs to be reset
   }

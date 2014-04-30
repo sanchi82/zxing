@@ -18,12 +18,12 @@ package com.google.zxing.datamatrix.encoder;
 
 final class EdifactEncoder implements Encoder {
 
-  @Override
+  
   public int getEncodingMode() {
     return HighLevelEncoder.EDIFACT_ENCODATION;
   }
 
-  @Override
+  
   public void encode(EncoderContext context) {
     //step F
     StringBuilder buffer = new StringBuilder();

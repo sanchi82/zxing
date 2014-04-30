@@ -39,7 +39,7 @@ public final class PDF417Writer implements Writer {
    */
   static final int WHITE_SPACE = 30;
 
-  @Override
+  
   public BitMatrix encode(String contents,
                           BarcodeFormat format,
                           int width,
@@ -78,7 +78,7 @@ public final class PDF417Writer implements Writer {
     return bitMatrixFromEncoder(encoder, contents, width, height, margin);
   }
 
-  @Override
+  
   public BitMatrix encode(String contents,
                           BarcodeFormat format,
                           int width,

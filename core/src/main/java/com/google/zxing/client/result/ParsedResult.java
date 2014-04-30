@@ -41,13 +41,13 @@ public abstract class ParsedResult {
 
   public abstract String getDisplayResult();
 
-  @Override
+  
   public final String toString() {
     return getDisplayResult();
   }
 
   public static void maybeAppend(String value, StringBuilder result) {
-    if (value != null && !value.isEmpty()) {
+    if (value != null && value.length()!=0) {
       // Don't add a newline before the first value
       if (result.length() > 0) {
         result.append('\n');

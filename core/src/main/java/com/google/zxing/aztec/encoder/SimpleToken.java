@@ -30,12 +30,12 @@ final class SimpleToken extends Token {
     this.bitCount = (short) bitCount;
   }
 
-  @Override
+  
   void appendTo(BitArray bitArray, byte[] text) {
     bitArray.appendBits(value, bitCount);
   }
 
-  @Override
+  
   public String toString() {
     int value = this.value & ((1 << bitCount) - 1);
     value |= 1 << bitCount;

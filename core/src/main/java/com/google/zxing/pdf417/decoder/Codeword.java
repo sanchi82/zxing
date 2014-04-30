@@ -76,7 +76,7 @@ final class Codeword {
     this.rowNumber = rowNumber;
   }
 
-  @Override
+  
   public String toString() {
     return rowNumber + "|" + value;
   }

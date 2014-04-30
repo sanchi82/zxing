@@ -18,12 +18,12 @@ package com.google.zxing.datamatrix.encoder;
 
 final class X12Encoder extends C40Encoder {
 
-  @Override
+  
   public int getEncodingMode() {
     return HighLevelEncoder.X12_ENCODATION;
   }
 
-  @Override
+  
   public void encode(EncoderContext context) {
     //step C
     StringBuilder buffer = new StringBuilder();
@@ -47,7 +47,7 @@ final class X12Encoder extends C40Encoder {
     handleEOD(context, buffer);
   }
 
-  @Override
+  
   int encodeChar(char c, StringBuilder sb) {
     if (c == '\r') {
       sb.append('\0');
@@ -67,7 +67,7 @@ final class X12Encoder extends C40Encoder {
     return 1;
   }
 
-  @Override
+  
   void handleEOD(EncoderContext context, StringBuilder buffer) {
     context.updateSymbolInfo();
     int available = context.getSymbolInfo().getDataCapacity() - context.getCodewordCount();

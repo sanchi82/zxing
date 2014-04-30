@@ -158,7 +158,7 @@ public final class GenericGF {
     return generatorBase;
   }
   
-  @Override
+  
   public String toString() {
     return "GF(0x" + Integer.toHexString(primitive) + ',' + size + ')';
   }

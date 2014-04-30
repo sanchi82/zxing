@@ -36,7 +36,7 @@ public final class EAN8Writer extends UPCEANWriter {
       (7 * 4) + // right bars
       3; // end guard
 
-  @Override
+  
   public BitMatrix encode(String contents,
                           BarcodeFormat format,
                           int width,
@@ -53,7 +53,7 @@ public final class EAN8Writer extends UPCEANWriter {
   /**
    * @return a byte array of horizontal pixels (false = white, true = black)
    */
-  @Override
+  
   public boolean[] encode(String contents) {
     if (contents.length() != 8) {
       throw new IllegalArgumentException(

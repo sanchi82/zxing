@@ -77,7 +77,7 @@ class DetectionResultColumn {
     return codewords;
   }
 
-  @Override
+  
   public String toString() {
     Formatter formatter = new Formatter();
     int row = 0;

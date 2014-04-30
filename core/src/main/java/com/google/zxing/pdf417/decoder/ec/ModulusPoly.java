@@ -227,7 +227,7 @@ final class ModulusPoly {
     return new ModulusPoly[] { quotient, remainder };
   }
 
-  @Override
+  
   public String toString() {
     StringBuilder result = new StringBuilder(8 * getDegree());
     for (int degree = getDegree(); degree >= 0; degree--) {

@@ -39,7 +39,7 @@ import java.util.Map;
  */
 public final class MultiFormatWriter implements Writer {
 
-  @Override
+  
   public BitMatrix encode(String contents,
                           BarcodeFormat format,
                           int width,
@@ -47,7 +47,7 @@ public final class MultiFormatWriter implements Writer {
     return encode(contents, format, width, height, null);
   }
 
-  @Override
+  
   public BitMatrix encode(String contents,
                           BarcodeFormat format,
                           int width, int height,

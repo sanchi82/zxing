@@ -76,7 +76,7 @@ public final class CodaBarReader extends OneDReader {
     counterLength = 0;
   }
 
-  @Override
+  
   public Result decodeRow(int rowNumber, BitArray row, Map<DecodeHintType,?> hints) throws NotFoundException {
 
     Arrays.fill(counters, 0);

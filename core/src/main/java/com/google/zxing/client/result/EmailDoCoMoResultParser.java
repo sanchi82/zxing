@@ -31,7 +31,7 @@ public final class EmailDoCoMoResultParser extends AbstractDoCoMoResultParser {
 
   private static final Pattern ATEXT_ALPHANUMERIC = Pattern.compile("[a-zA-Z0-9@.!#$%&'*+\\-/=?^_`{|}~]+");
 
-  @Override
+  
   public EmailAddressParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     if (!rawText.startsWith("MATMSG:")) {

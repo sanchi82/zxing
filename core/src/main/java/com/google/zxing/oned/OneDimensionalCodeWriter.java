@@ -31,7 +31,7 @@ import java.util.Map;
  */
 public abstract class OneDimensionalCodeWriter implements Writer {
 
-  @Override
+  
   public final BitMatrix encode(String contents, BarcodeFormat format, int width, int height)
       throws WriterException {
     return encode(contents, format, width, height, null);
@@ -44,13 +44,13 @@ public abstract class OneDimensionalCodeWriter implements Writer {
    * {@code height} to zero to get minimum size barcode. If negative value is set to {@code width}
    * or {@code height}, {@code IllegalArgumentException} is thrown.
    */
-  @Override
+  
   public BitMatrix encode(String contents,
                           BarcodeFormat format,
                           int width,
                           int height,
                           Map<EncodeHintType,?> hints) throws WriterException {
-    if (contents.isEmpty()) {
+    if (contents.length()==0) {
       throw new IllegalArgumentException("Found empty contents");
     }
 

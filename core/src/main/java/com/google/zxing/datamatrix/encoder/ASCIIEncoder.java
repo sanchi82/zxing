@@ -18,12 +18,12 @@ package com.google.zxing.datamatrix.encoder;
 
 final class ASCIIEncoder implements Encoder {
 
-  @Override
+  
   public int getEncodingMode() {
     return HighLevelEncoder.ASCII_ENCODATION;
   }
 
-  @Override
+  
   public void encode(EncoderContext context) {
     //step B
     int n = HighLevelEncoder.determineConsecutiveDigitCount(context.getMessage(), context.pos);

@@ -35,7 +35,7 @@ import com.google.zxing.Result;
  */
 public final class AddressBookDoCoMoResultParser extends AbstractDoCoMoResultParser {
 
-  @Override
+  
   public AddressBookParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     if (!rawText.startsWith("MECARD:")) {

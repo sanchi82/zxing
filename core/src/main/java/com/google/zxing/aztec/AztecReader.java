@@ -47,12 +47,12 @@ public final class AztecReader implements Reader {
    * @throws NotFoundException if a Data Matrix code cannot be found
    * @throws FormatException if a Data Matrix code cannot be decoded
    */
-  @Override
+  
   public Result decode(BinaryBitmap image) throws NotFoundException, FormatException {
     return decode(image, null);
   }
 
-  @Override
+  
   public Result decode(BinaryBitmap image, Map<DecodeHintType,?> hints)
       throws NotFoundException, FormatException {
 
@@ -75,7 +75,15 @@ public final class AztecReader implements Reader {
         AztecDetectorResult detectorResult = detector.detect(true);
         points = detectorResult.getPoints();
         decoderResult = new Decoder().decode(detectorResult);
-      } catch (NotFoundException | FormatException e) {
+      } catch (NotFoundException e) {
+        if (notFoundException != null) {
+          throw notFoundException;
+        }
+        if (formatException != null) {
+          throw formatException;
+        }
+        throw e;
+      } catch (FormatException e) {
         if (notFoundException != null) {
           throw notFoundException;
         }
@@ -109,7 +117,7 @@ public final class AztecReader implements Reader {
     return result;
   }
 
-  @Override
+  
   public void reset() {
     // do nothing
   }

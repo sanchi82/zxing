@@ -58,7 +58,7 @@ public final class HybridBinarizer extends GlobalHistogramBinarizer {
    * constructor instead, but there are some advantages to doing it lazily, such as making
    * profiling easier, and not doing heavy lifting when callers don't expect it.
    */
-  @Override
+  
   public BitMatrix getBlackMatrix() throws NotFoundException {
     if (matrix != null) {
       return matrix;
@@ -88,7 +88,7 @@ public final class HybridBinarizer extends GlobalHistogramBinarizer {
     return matrix;
   }
 
-  @Override
+  
   public Binarizer createBinarizer(LuminanceSource source) {
     return new HybridBinarizer(source);
   }

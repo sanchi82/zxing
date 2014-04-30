@@ -34,7 +34,7 @@ public final class URIResultParser extends ResultParser {
       "(:\\d{1,5})?" + // maybe port
       "(/|\\?|$)"); // query, path or nothing
 
-  @Override
+  
   public URIParsedResult parse(Result result) {
     String rawText = getMassagedText(result);
     // We specifically handle the odd "URL" scheme here for simplicity and add "URI" for fun

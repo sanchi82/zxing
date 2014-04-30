@@ -54,12 +54,12 @@ public final class DataMatrixReader implements Reader {
    * @throws FormatException if a Data Matrix code cannot be decoded
    * @throws ChecksumException if error correction fails
    */
-  @Override
+  
   public Result decode(BinaryBitmap image) throws NotFoundException, ChecksumException, FormatException {
     return decode(image, null);
   }
 
-  @Override
+  
   public Result decode(BinaryBitmap image, Map<DecodeHintType,?> hints)
       throws NotFoundException, ChecksumException, FormatException {
     DecoderResult decoderResult;
@@ -86,7 +86,7 @@ public final class DataMatrixReader implements Reader {
     return result;
   }
 
-  @Override
+  
   public void reset() {
     // do nothing
   }

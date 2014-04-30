@@ -87,7 +87,7 @@ public final class VINParsedResult extends ParsedResult {
     return sequentialNumber;
   }
 
-  @Override
+  
   public String getDisplayResult() {
     StringBuilder result = new StringBuilder(50);
     result.append(worldManufacturerID).append(' ');

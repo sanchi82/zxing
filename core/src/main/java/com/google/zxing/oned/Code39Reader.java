@@ -95,7 +95,7 @@ public final class Code39Reader extends OneDReader {
     counters = new int[9];
   }
 
-  @Override
+  
   public Result decodeRow(int rowNumber, BitArray row, Map<DecodeHintType,?> hints)
       throws NotFoundException, ChecksumException, FormatException {
 

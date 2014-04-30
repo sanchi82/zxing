@@ -175,8 +175,11 @@ final class DecodedBitStreamParser {
           }
         }
       }
+      int[] copy = new int[additionalOptionCodeWordsIndex];
+      System.arraycopy(additionalOptionCodeWords, 0, copy, 0,
+                       Math.min(additionalOptionCodeWords.length, additionalOptionCodeWordsIndex));
 
-      resultMetadata.setOptionalData(Arrays.copyOf(additionalOptionCodeWords, additionalOptionCodeWordsIndex));
+      resultMetadata.setOptionalData(copy);
     } else if (codewords[codeIndex] == MACRO_PDF417_TERMINATOR) {
       resultMetadata.setLastSegment(true);
       codeIndex++;

@@ -42,7 +42,7 @@ public final class ProductParsedResult extends ParsedResult {
     return normalizedProductID;
   }
 
-  @Override
+  
   public String getDisplayResult() {
     return productID;
   }

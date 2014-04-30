@@ -53,7 +53,7 @@ public final class EmailAddressParsedResult extends ParsedResult {
     return mailtoURI;
   }
 
-  @Override
+  
   public String getDisplayResult() {
     StringBuilder result = new StringBuilder(30);
     maybeAppend(emailAddress, result);

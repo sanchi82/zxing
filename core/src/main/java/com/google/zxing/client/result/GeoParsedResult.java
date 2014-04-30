@@ -79,7 +79,7 @@ public final class GeoParsedResult extends ParsedResult {
     return query;
   }
 
-  @Override
+  
   public String getDisplayResult() {
     StringBuilder result = new StringBuilder(20);
     result.append(latitude);

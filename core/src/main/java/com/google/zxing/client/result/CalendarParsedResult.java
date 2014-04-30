@@ -154,7 +154,7 @@ public final class CalendarParsedResult extends ParsedResult {
     return longitude;
   }
 
-  @Override
+  
   public String getDisplayResult() {
     StringBuilder result = new StringBuilder(100);
     maybeAppend(summary, result);

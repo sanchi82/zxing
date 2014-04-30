@@ -186,7 +186,7 @@ public final class AddressBookParsedResult extends ParsedResult {
     return geo;
   }
 
-  @Override
+  
   public String getDisplayResult() {
     StringBuilder result = new StringBuilder(100);
     maybeAppend(names, result);

@@ -259,7 +259,7 @@ final class DetectionResultRowIndicatorColumn extends DetectionResultColumn {
     return isLeft;
   }
 
-  @Override
+  
   public String toString() {
     return "IsLeft: " + isLeft + '\n' + super.toString();
   }
