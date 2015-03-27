@@ -236,28 +236,6 @@ final class PDF417HighLevelEncoder {
     return sb.toString();
   }
 
-  private static byte[] toBytes(String msg, Charset encoding) throws WriterException {
-    // Defer instantiating default Charset until needed, since it may be for an unsupported
-    // encoding. For example the default of Cp437 doesn't seem to exist on Android.
-    if (encoding == null) {
-      for (String encodingName : DEFAULT_ENCODING_NAMES) {
-        try {
-          encoding = Charset.forName(encodingName);
-        } catch (UnsupportedCharsetException uce) {
-          // continue
-        }
-      }
-      if (encoding == null) {
-        throw new WriterException("No support for any encoding: " + DEFAULT_ENCODING_NAMES);
-      }
-    }
-    try {
-      return msg.getBytes(encoding.name());
-    } catch (java.io.UnsupportedEncodingException uee) {
-      return new byte[]{};
-    }
-  }
-
   /**
    * Encode parts of the message using Text Compaction as described in ISO/IEC 15438:2001(E),
    * chapter 4.4.2.
